@@ -33,3 +33,12 @@ Create and apply definition:
 
 Find the pod:
 ```kubectl describe pod myapp-pod```
+
+# Unrelated Notes:
+Sometimes writing ```kubectl``` all the time can be burdensome. You could also setup an 'alias' to shorten the command to something quicker to type.
+
+For exaple:
+```
+alias k='kubectl'
+```
+Now you only need to type ```k``` to execute the kubectl tool.
