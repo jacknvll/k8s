@@ -42,3 +42,19 @@ For exaple:
 alias k='kubectl'
 ```
 Now you only need to type ```k``` to execute the kubectl tool.
+
+# Deployments inline
+You can create deployments directly on the CLI terminal and let the tool generate the YAML configuration file for you. This can be a quicker solution than writing out a whole config file.
+```
+kubectl create deployment httpd-frontend --image=httpd:2.4-alpine --replicas=33 -o yaml > httpd-deployment.yaml
+```
+
+Another, for Pods:
+```
+kubectl run redis --image=redis -n=dev
+```
+
+get pods in all namespaces:
+```
+kubectl get pods -A
+```
