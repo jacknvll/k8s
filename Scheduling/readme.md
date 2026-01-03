@@ -1,3 +1,18 @@
+# Summary
+
+This section will explore the following components:
+- Scheduling
+- Labels & Selectors
+- Taints & Tolerants
+- Node Affinity
+- Resource Limits
+- DaemonSets
+- Static Pods
+- Priority Classes
+- Multiple Schedules
+- Scheduler Profiles
+- Admission Controllers
+
 # Manual Scheduling
 If no scheduler exists, use pod Binding.
 Or define the nodeName in the yml config. 
