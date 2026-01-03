@@ -16,25 +16,21 @@ This section explores the following components:
 - kubectl apply
 
 
-# Helpful Commands
-```
-kubectl get pods
-kubectl run nginx --image=nginx
-```
+# Common Commands
+Get a Resource type: `k get pods` 
 
-```
-vim config.yml
-kubectl apply -f config.yml
-```
-Delete pod by name:
-```
-kubectl delete pod redis123
-```
+Create Pod: `k run nginx --image=nginx`
 
-Shows the Node for each Pod:
-```
-kubectl get pods -o wide
-```
+Apply changes: `k apply -f pod.yaml`
+
+Delete and create again: `k replace -f pod.yaml`
+
+Delete: `k delete pod nginx`
+
+Create pod to a specific namespace: `k run redis --image=redis -n=dev`
+
+Get pods in all namespaces: `kubectl get pods -A`
+
 ## Real example:
 Using example in this directory:
 
@@ -46,31 +42,6 @@ Create and apply definition:
 
 Find the pod:
 ```kubectl describe pod myapp-pod```
-
-# Tool Alias
-Sometimes writing ```kubectl``` all the time can be burdensome. You could also setup an 'alias' to shorten the command to something quicker to type.
-
-For exaple:
-```
-alias k='kubectl'
-```
-Now you only need to type ```k``` to execute the kubectl tool.
-
-# Deployments Inline
-You can create deployments directly on the CLI terminal and let the tool generate the YAML configuration file for you. This can be a quicker solution than writing out a whole config file.
-```
-kubectl create deployment httpd-frontend --image=httpd:2.4-alpine --replicas=33 -o yaml > httpd-deployment.yaml
-```
-
-Another, for Pods:
-```
-kubectl run redis --image=redis -n=dev
-```
-
-get pods in all namespaces:
-```
-kubectl get pods -A
-```
 
 # Services
 The Service API provides loose coupling between microservices in an application hosted in K8s.
